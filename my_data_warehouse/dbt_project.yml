@@ -26,7 +26,7 @@ clean-targets:         # directories to be removed by dbt clean
 
 # https://docs.getdbt.com/reference/resource-configs/tags
 models:
-  omni_dw:
+  my_data_warehouse:
     +tags: dw
   +persist_docs:
     relation: true
@@ -38,5 +38,3 @@ models:
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the {{ config(...) }} macro.
-
-on-run-start: "{{ create_udfs() }}"

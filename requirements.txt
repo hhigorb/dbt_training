@@ -1,2 +1,2 @@
-pip install dbt-core
-pip install dbt-bigquery
+dbt-core
+dbt-bigquery

@@ -1,4 +1,4 @@
-omni_dw:
+my_data_warehouse:
   outputs:
     dev:
       dataset: my_data_warehouse_homolog

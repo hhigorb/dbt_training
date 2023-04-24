@@ -1,0 +1,11 @@
+# https://docs.getdbt.com/reference/configs-and-properties#example
+
+version: 2
+
+sources:
+  - name: higor_workspace
+    database: cobalt-nomad-322417
+    description: "Tabelas de exemplo"
+    tables:
+      - name: estados
+      - name: transactions

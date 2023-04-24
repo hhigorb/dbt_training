@@ -62,10 +62,6 @@ models:
                 ]
               quote: false
 
-      - name: nr_ordem_dia_util
-        description: "Informa o número da ordem do dia útil a partir do dia 2018-01-01 como é na tabela `projetoomni.bi_data_mart.calendario_dias_uteis`."
-        tests: 
-
       - name: nr_trimestre
         description: "Trimestre da dt_base"
         tests:

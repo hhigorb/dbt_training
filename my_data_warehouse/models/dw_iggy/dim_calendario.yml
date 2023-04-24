@@ -1,0 +1,104 @@
+version: 2
+
+models:
+  - name: dim_calendario
+    description: "Tabela dimensão com datas para auxiliar queries com outras tabelas"
+    columns:
+      - name: dt_base
+        description: "Data base da tabela (ano 2000 até 2100)"
+        tests:
+          - not_null
+          - unique
+
+      - name: nr_ano
+        description: "Ano da dt_base"
+        tests:
+          - not_null
+
+      - name: nr_mes
+        description: "Número do mês da dt_base"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+
+      - name: nr_dia
+        description: "Número do dia da dt_base"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]
+
+      - name: nm_mes
+        description: "Nome do mês da dt_base"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+
+      - name: nr_dia_semana
+        description: "Número do dia da semana da dt_base"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["1", "2", "3", "4", "5", "6", "7"]
+
+      - name: nm_dia_semana
+        description: "Nome do dia da dt_base"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"]
+      
+      - name: is_dia_util
+        description: "Informa se o dia é útil"
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                [
+                  true,
+                  false
+                ]
+              quote: false
+
+      - name: nr_ordem_dia_util
+        description: "Informa o número da ordem do dia útil a partir do dia 2018-01-01 como é na tabela `projetoomni.bi_data_mart.calendario_dias_uteis`."
+        tests: 
+
+      - name: nr_trimestre
+        description: "Trimestre da dt_base"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["1", "2", "3", "4"]
+
+      - name: nr_ano_trimestre
+        description: "Junção do ano da dt_base com o trimestre da dt_base (EX: 2021Q1, 2022Q3)"
+        tests:
+          - not_null
+
+      - name: nr_ano_mes
+        description: "nr_ano_mes"
+        tests:
+          - not_null
+
+      - name: nr_semana
+        description: "Número da semana da dt_base"
+        tests:
+          - not_null
+
+      - name: nr_iso_semana
+        description: "Número ISO da semana da dt_base"
+        tests:
+          - not_null
+
+      - name: dt_primeiro_dia_mes
+        description: "Primeiro dia do mês (EX: Ano 2022 - 2022-01-01, 2022-02-01)"
+        tests:
+          - not_null
+
+      - name: dt_ultimo_dia_ano
+        description: "Último dia do ano (EX: Ano 2023 - 2022-12-31)"
+        tests:
+          - not_null

@@ -1,0 +1,29 @@
+# https://docs.getdbt.com/reference/configs-and-properties#example
+# Adicionar tabelas em ordem alfabética
+
+version: 2
+
+sources:
+  - name: pix_read_replica
+    database: projetoomni
+    description: "Cópia no bq da replica do PIX no postgres"
+    tables:
+      - name: exchange_item
+      - name: exchange_receipt
+      - name: exchange
+      - name: exchange_reason
+      - name: employee
+      - name: bag_discount
+      - name: store_daily_goal
+      - name: store_employee_count
+      - name: order_item
+      - name: pickup_in_store
+      - name: order_receipt
+      - name: order
+      - name: delivery_from_distributor
+      - name: credit
+      - name: restock_invoice_item
+      - name: restock
+      - name: restock_package
+      - name: restock_invoice
+      - name: payment

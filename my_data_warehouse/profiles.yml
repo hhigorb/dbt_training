@@ -1,0 +1,25 @@
+omni_dw:
+  outputs:
+    dev:
+      dataset: my_data_warehouse_homolog
+      fixed_retries: 1
+      keyfile: /home/iggy/Downloads/dbt_service_account.json
+      location: US
+      method: service-account
+      priority: batch
+      project: cobalt-nomad-322417
+      threads: 1
+      timeout_seconds: 600
+      type: bigquery
+    prod:
+      dataset: my_data_warehouse
+      fixed_retries: 1
+      keyfile: /home/iggy/Downloads/dbt_service_account.json
+      location: US
+      method: service-account
+      priority: batch
+      project: cobalt-nomad-322417
+      threads: 1
+      timeout_seconds: 600
+      type: bigquery
+  target: prod

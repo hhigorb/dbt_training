@@ -1,0 +1,6 @@
+{
+    "git.inputValidationLength": 400,
+    "git.inputValidationSubjectLength": 400,
+    "dbt-formatter.upper": true,
+
+}

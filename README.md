@@ -2,6 +2,10 @@
 
 dbt é uma ferramenta para tratar dados. Esse projeto conta com a implementação do dbt Open Source conectado ao DW BigQuery para realizar tratamento de dados. Qualquer dúvida, leia a documentação do próprio dbt.
 
+## Tabela criada/tratada pelo projeto
+
+![Tratamento de tabela](images/dim_calendario.png 'Tratamento de tabela')
+
 ### Resources
 
 * Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)

@@ -105,7 +105,7 @@ dbt docs generate: gera uma documentação do projeto na pasta target.
 ```
 
 ```
-dbt docs serve: sobe o html do modelo DTB em si.
+dbt docs serve: Abre um site com a documentação dos modelos dbt localmente.
 ```
 
 ```

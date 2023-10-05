@@ -25,6 +25,8 @@ Instale as dependências:
 
 * Instale as dependências encontradas no arquivo requirements.txt
 
+`pip3 install -r requirements.txt`
+
 Configure o arquivo profiles.yml localmente:
 
 * Você irá precisar fazer o download chave de conexão com o DW do seu provedor Cloud;

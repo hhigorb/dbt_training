@@ -48,6 +48,8 @@ O dialeto SQL executado pelo dbt é o dialeto do banco de dados que você está 
 
 ![Como o dbt funciona](images/image11.png 'Como o dbt funciona')
 
+https://docs.getdbt.com/docs/build/projects
+
 ## Referências (ref) e Sources (source)
 
 **Ref:** Tabela que já está no dbt, é um modelo que já foi criado.
@@ -57,14 +59,89 @@ O dialeto SQL executado pelo dbt é o dialeto do banco de dados que você está 
 
 ---
 
-## CTEs (Common Table Expression)
+## Comandos úteis dbt
 
-![CTEs](images/image13.png 'CTEs')
+Todo comando dbt começa com a palavra reservada dbt, seguida pelo comando.
+
+Os principais comandos dbt são:
+
+##### Inicializa um novo projeto dbt. Esse comando cria a estrutura de diretórios e arquivos padrão necessários para começar a usar o dbt.
+```terminal
+dbt init my_new_project
+```
+
+##### Verifica a configuração do dbt e a conectividade com o banco de dados. Esse comando ajuda a garantir que todas as configurações estejam corretas antes de executar outros comandos.
+```terminal
+dbt debug
+```
+
+##### Baixa as dependências listadas no arquivo packages.yml. É utilizado para gerenciar pacotes dbt de terceiros.
+```terminal
+dbt deps
+```
+
+##### Remove todos os artefatos gerados pelo dbt, como diretórios de compilação e logs. É útil para iniciar uma nova execução do zero.
+```terminal
+dbt clean
+```
+
+##### Carrega dados de arquivos CSV na pasta data para o banco de dados. Esses dados podem ser usados como tabelas de referência no seu projeto dbt.
+```terminal
+dbt seed
+```
+
+##### Compila e executa os modelos dbt, criando tabelas e visualizações no banco de dados de acordo com as transformações definidas no projeto.
+```terminal
+dbt run
+```
+
+##### Tira "fotografias" das tabelas de origem para capturar a evolução dos dados ao longo do tempo. É usado para auditoria e rastreamento de mudanças nos dados.
+```terminal
+dbt snapshot
+```
+
+##### Executa testes nos dados para garantir a qualidade e integridade dos mesmos. Os testes são definidos nos arquivos de schema ou scripts SQL na pasta tests e podem verificar valores nulos, unicidade, relações entre tabelas, entre outros.
+```terminal
+dbt test
+```
+
+##### Compila os modelos dbt em arquivos SQL sem executá-los. Esse comando é útil para revisar o SQL gerado antes de executá-lo no banco de dados.
+```terminal
+dbt compile
+```
+
+##### Gera a documentação do projeto dbt, incluindo descrições de modelos, colunas e testes. A documentação é gerada como arquivos HTML que podem ser servidos localmente.
+```terminal
+dbt docs generate
+```
+
+##### Serve a documentação gerada pelo comando dbt docs generate em um servidor web local. Isso permite visualizar e navegar pela documentação do projeto no navegador.
+```terminal
+dbt docs serve
+```
+
+Consulte a documentação oficial para checar todos os comandos do dbt: https://docs.getdbt.com/reference/dbt-commands
 
 ---
+
+## Pacotes (libs) no dbt
+
+O arquivo packages.yml é onde você define as dependências do seu projeto dbt. Nele, você especifica os pacotes que seu projeto precisa. O dbt usa esse arquivo para baixar e instalar esses pacotes.
+
+![Libs](images/image13.png 'Libs')
+
+---
+
+## CTEs (Common Table Expression)
 
 ![CTEs](images/image14.png 'CTEs')
 
 ---
 
 ![CTEs](images/image15.png 'CTEs')
+
+---
+
+![CTEs](images/image16.png 'CTEs')
+
+Para qualquer dúvida, sempre consulta a documentação oficial da ferramenta: https://docs.getdbt.com/docs/get-started-dbt

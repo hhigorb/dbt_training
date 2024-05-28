@@ -26,7 +26,7 @@ DATEFORMAT AS 'YYYY-MM-DD HH:MI:SS'
 removequotes;
 
 copy order_details 
-from 's3://meubucket/orderdetails.csv' 
+from 's3://meubucket/order_details.csv' 
 CREDENTIALS 'aws_access_key_id=???;aws_secret_access_key=###' 
 delimiter ';' 
 region 'sa-east-1'

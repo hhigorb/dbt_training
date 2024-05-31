@@ -1,0 +1,18 @@
+# https://docs.getdbt.com/reference/configs-and-properties#example
+
+version: 2
+
+sources:
+  - name: redshift_northwind
+    database: northwind
+    schema: public
+    description: "Tabelas do projeto Northwind"
+    tables:
+      - name: categories
+      - name: products
+      - name: suppliers
+      - name: employees
+      - name: order_details
+      - name: customers
+      - name: orders
+      - name: shippers

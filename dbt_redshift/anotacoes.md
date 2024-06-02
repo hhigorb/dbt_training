@@ -53,7 +53,8 @@ https://docs.getdbt.com/docs/build/projects
 ## Referências (ref) e Sources (source)
 
 **Ref:** Tabela que já está no dbt, é um modelo que já foi criado.
-**Sources:** Tabela do banco de dados de origem
+
+**Sources:** Tabela do banco de dados de origem (tabela raw do DW).
 
 ![Como o dbt funciona](images/image12.png 'Como o dbt funciona')
 

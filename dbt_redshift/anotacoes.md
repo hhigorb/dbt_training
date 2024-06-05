@@ -48,7 +48,7 @@ O dialeto SQL executado pelo dbt é o dialeto do banco de dados que você está 
 
 ## Estrutura de pastas de um projeto dbt
 
-![Como o dbt funciona](images/image11.png 'Como o dbt funciona')
+![Estrutura de pastas](images/image11.png 'Estrutura de pastas')
 
 https://docs.getdbt.com/docs/build/projects
 
@@ -58,7 +58,7 @@ https://docs.getdbt.com/docs/build/projects
 
 **Sources:** Tabela do banco de dados de origem (tabela raw do DW).
 
-![Como o dbt funciona](images/image12.png 'Como o dbt funciona')
+![Ref e Sources](images/image12.png 'Ref e Sources')
 
 ---
 
@@ -85,6 +85,46 @@ https://docs.getdbt.com/docs/build/projects
 ---
 
 ![Materializações](images/image18.png 'Materializações')
+
+---
+
+## Testes no dbt
+
+![Testes](images/image19.png 'Testes')
+
+---
+
+![Testes](images/image20.png 'Testes')
+
+---
+
+## Hooks
+
+Hooks no dbt são comandos SQL ou operações que você pode configurar para serem executados automaticamente antes ou depois de certas ações em seu fluxo de trabalho de dbt. Eles são úteis para realizar tarefas preparatórias ou de limpeza, como configurar variáveis, limpar tabelas temporárias ou registrar informações de auditoria. Existem principalmente dois tipos de hooks:
+
+**Pre-hook:** Executados antes de um modelo ser executado.
+
+**Post-hook:** Executados após a execução de um modelo.
+
+Esses hooks permitem automatizar e personalizar processos adicionais em suas transformações de dados, garantindo que tudo esteja em ordem antes e depois da execução das suas operações principais.
+
+![Hooks](images/image21.png 'Hooks')
+
+---
+
+![Hooks](images/image22.png 'Hooks')
+
+---
+
+## Pacotes (libs) no dbt
+
+No dbt, packages são coleções de modelos, macros e outros recursos que você pode reutilizar em seus projetos de análise de dados. Eles funcionam como bibliotecas ou módulos que facilitam a implementação de funcionalidades comuns sem precisar escrever o código do zero. Você pode baixar e instalar pacotes de uma comunidade de desenvolvedores ou criar seus próprios pacotes para compartilhar entre diferentes projetos.
+
+O arquivo packages.yml é onde você define as dependências do seu projeto dbt. Nele, você especifica os pacotes que seu projeto precisa. O dbt usa esse arquivo para baixar e instalar esses pacotes.
+
+![Libs](images/image23.png 'Libs')
+
+Você pode achar todos os pacotes disponíveis neste link: https://hub.getdbt.com/
 
 ---
 
@@ -155,11 +195,3 @@ dbt docs serve
 ```
 
 Consulte a documentação oficial para checar todos os comandos do dbt: https://docs.getdbt.com/reference/dbt-commands
-
----
-
-## Pacotes (libs) no dbt
-
-O arquivo packages.yml é onde você define as dependências do seu projeto dbt. Nele, você especifica os pacotes que seu projeto precisa. O dbt usa esse arquivo para baixar e instalar esses pacotes.
-
-![Libs](images/image19.png 'Libs')

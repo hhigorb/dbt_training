@@ -2,6 +2,8 @@
 
 ## Como o dbt funciona?
 
+Para qualquer dúvida, sempre consulta a documentação oficial da ferramenta: https://docs.getdbt.com/docs/get-started-dbt
+
 ![Como o dbt funciona](images/image1.png 'Como o dbt funciona')
 
 ---
@@ -60,6 +62,32 @@ https://docs.getdbt.com/docs/build/projects
 
 ---
 
+## Materializações
+
+![Materializações](images/image13.png 'Materializações')
+
+---
+
+![Materializações](images/image14.png 'Materializações')
+
+---
+
+![Materializações](images/image15.png 'Materializações')
+
+---
+
+![Materializações](images/image16.png 'Materializações')
+
+---
+
+![Materializações](images/image17.png 'Materializações')
+
+---
+
+![Materializações](images/image18.png 'Materializações')
+
+---
+
 ## Comandos úteis dbt
 
 Todo comando dbt começa com a palavra reservada dbt, seguida pelo comando.
@@ -96,6 +124,11 @@ dbt seed
 dbt run
 ```
 
+##### Executa transformações, testes, snapshots e seeds do projeto dbt, preparando e validando os dados no banco de dados (roda os comandos dbt run, test, snapshot e seed).
+```terminal
+dbt build
+```
+
 ##### Tira "fotografias" das tabelas de origem para capturar a evolução dos dados ao longo do tempo. É usado para auditoria e rastreamento de mudanças nos dados.
 ```terminal
 dbt snapshot
@@ -129,20 +162,4 @@ Consulte a documentação oficial para checar todos os comandos do dbt: https://
 
 O arquivo packages.yml é onde você define as dependências do seu projeto dbt. Nele, você especifica os pacotes que seu projeto precisa. O dbt usa esse arquivo para baixar e instalar esses pacotes.
 
-![Libs](images/image13.png 'Libs')
-
----
-
-## CTEs (Common Table Expression)
-
-![CTEs](images/image14.png 'CTEs')
-
----
-
-![CTEs](images/image15.png 'CTEs')
-
----
-
-![CTEs](images/image16.png 'CTEs')
-
-Para qualquer dúvida, sempre consulta a documentação oficial da ferramenta: https://docs.getdbt.com/docs/get-started-dbt
+![Libs](images/image19.png 'Libs')

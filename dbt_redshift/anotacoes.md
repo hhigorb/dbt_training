@@ -2,7 +2,7 @@
 
 ## Como o dbt funciona?
 
-Para qualquer dúvida, sempre consulta a documentação oficial da ferramenta: https://docs.getdbt.com/docs/get-started-dbt
+Para qualquer dúvida, sempre consulte a documentação oficial da ferramenta: https://docs.getdbt.com/docs/get-started-dbt
 
 ![Como o dbt funciona](images/image1.png 'Como o dbt funciona')
 

@@ -177,6 +177,18 @@ Você pode achar todos os pacotes disponíveis neste link: https://hub.getdbt.co
 
 ---
 
+## dbt Docs
+
+O dbt Docs é uma parte do dbt que ajuda na documentação e na compreensão dos dados e transformações em um projeto dbt. Ele gera documentação automaticamente a partir dos modelos dbt, mostrando como os dados são transformados e quaisquer dependências entre eles.
+
+Os principais comandos para gerar o dbt Docs são:
+
+**dbt docs generate:** Gera a documentação do dbt para o projeto atual. Isso cria ou atualiza os arquivos HTML e JSON que compõem a documentação.
+
+**dbt docs serve:** Inicia um servidor local para visualizar a documentação gerada pelo dbt. Você pode acessar a documentação no navegador usando o endereço fornecido pelo servidor local.
+
+---
+
 ## Comandos úteis dbt
 
 Todo comando dbt começa com a palavra reservada dbt, seguida pelo comando.

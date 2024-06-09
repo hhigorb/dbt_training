@@ -90,6 +90,55 @@ https://docs.getdbt.com/docs/build/projects
 
 ## Testes no dbt
 
+No dbt, os testes podem ser divididos em duas categorias principais: testes predefinidos (built-in) e testes personalizados (custom).
+
+### Tipos de testes no dbt
+
+**Testes Predefinidos (Built-in Tests):**
+
+- **Uniqueness:** Garante que os valores em uma coluna sejam únicos.
+
+- **Not Null:** Verifica se uma coluna não contém valores nulos.
+
+- **Accepted Values:** Confirma que uma coluna contém apenas um conjunto específico de valores.
+
+- **Relationships:** Verifica a integridade referencial entre duas tabelas, garantindo que uma chave estrangeira em uma tabela exista como uma chave primária em outra tabela.
+
+**Testes Personalizados (Custom Tests):**
+
+São escritos como consultas SQL dentro do dbt e permitem flexibilidade para validar regras de negócio específicas ou condições que não são cobertas pelos testes predefinidos.
+Os testes personalizados são definidos dentro do diretório tests e podem ser referenciados nos modelos dbt para execução.
+
+### Implementação dos testes
+
+Os testes no dbt são definidos nos arquivos de esquema (schema.yml) que acompanham os modelos dbt. A estrutura básica de um arquivo schema.yml com testes predefinidos seria:
+
+```yaml
+version: 2
+
+models:
+  - name: nome_do_modelo
+    columns:
+      - name: nome_da_coluna
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['valor1', 'valor2']
+```
+
+Para testes personalizados, o processo envolve criar um arquivo SQL no diretório tests:
+
+```sql
+-- tests/custom_test.sql
+with errors as (
+    select *
+    from {{ ref('nome_do_modelo') }}
+    where condição_personalizada
+)
+select count(*) from errors
+```
+
 ![Testes](images/image19.png 'Testes')
 
 ---

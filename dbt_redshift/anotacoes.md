@@ -255,4 +255,8 @@ dbt docs generate
 dbt docs serve
 ```
 
+Também é possível executar os comandos com argumentos:
+
+![Comandos dbt](images/image24.png 'Comandos dbt')
+
 Consulte a documentação oficial para checar todos os comandos do dbt: https://docs.getdbt.com/reference/dbt-commands

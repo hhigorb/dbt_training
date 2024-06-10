@@ -90,6 +90,55 @@ https://docs.getdbt.com/docs/build/projects
 
 ## Testes no dbt
 
+No dbt, os testes podem ser divididos em duas categorias principais: testes predefinidos (built-in) e testes personalizados (custom).
+
+### Tipos de testes no dbt
+
+**Testes Predefinidos (Built-in Tests):**
+
+- **Uniqueness:** Garante que os valores em uma coluna sejam únicos.
+
+- **Not Null:** Verifica se uma coluna não contém valores nulos.
+
+- **Accepted Values:** Confirma que uma coluna contém apenas um conjunto específico de valores.
+
+- **Relationships:** Verifica a integridade referencial entre duas tabelas, garantindo que uma chave estrangeira em uma tabela exista como uma chave primária em outra tabela.
+
+**Testes Personalizados (Custom Tests):**
+
+São escritos como consultas SQL dentro do dbt e permitem flexibilidade para validar regras de negócio específicas ou condições que não são cobertas pelos testes predefinidos.
+Os testes personalizados são definidos dentro do diretório tests e podem ser referenciados nos modelos dbt para execução.
+
+### Implementação dos testes
+
+Os testes no dbt são definidos nos arquivos de esquema (schema.yml) que acompanham os modelos dbt. A estrutura básica de um arquivo schema.yml com testes predefinidos seria:
+
+```yaml
+version: 2
+
+models:
+  - name: nome_do_modelo
+    columns:
+      - name: nome_da_coluna
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['valor1', 'valor2']
+```
+
+Para testes personalizados, o processo envolve criar um arquivo SQL no diretório tests:
+
+```sql
+-- tests/custom_test.sql
+with errors as (
+    select *
+    from {{ ref('nome_do_modelo') }}
+    where condição_personalizada
+)
+select count(*) from errors
+```
+
 ![Testes](images/image19.png 'Testes')
 
 ---
@@ -125,6 +174,18 @@ O arquivo packages.yml é onde você define as dependências do seu projeto dbt.
 ![Libs](images/image23.png 'Libs')
 
 Você pode achar todos os pacotes disponíveis neste link: https://hub.getdbt.com/
+
+---
+
+## dbt Docs
+
+O dbt Docs é uma parte do dbt que ajuda na documentação e na compreensão dos dados e transformações em um projeto dbt. Ele gera documentação automaticamente a partir dos modelos dbt, mostrando como os dados são transformados e quaisquer dependências entre eles.
+
+Os principais comandos para gerar o dbt Docs são:
+
+**dbt docs generate:** Gera a documentação do dbt para o projeto atual. Isso cria ou atualiza os arquivos HTML e JSON que compõem a documentação.
+
+**dbt docs serve:** Inicia um servidor local para visualizar a documentação gerada pelo dbt. Você pode acessar a documentação no navegador usando o endereço fornecido pelo servidor local.
 
 ---
 
@@ -193,5 +254,9 @@ dbt docs generate
 ```terminal
 dbt docs serve
 ```
+
+Também é possível executar os comandos com argumentos:
+
+![Comandos dbt](images/image24.png 'Comandos dbt')
 
 Consulte a documentação oficial para checar todos os comandos do dbt: https://docs.getdbt.com/reference/dbt-commands

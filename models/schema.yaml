@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: employees
+    columns:
+      - name: country
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['USA', 'UK']

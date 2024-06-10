@@ -39,6 +39,8 @@ Nesse exemplo:
 
 if is_incremental() verifica se a execução é incremental.
 
+this se refere a própria tabela que está sendo executada pelo modelo dbt. É o próprio modelo em si.
+
 Se for uma execução incremental, o SQL filtra os dados para incluir apenas os registros
 com updated_at maiores que a última atualização na tabela atual {{ this }}.
 

@@ -5,6 +5,10 @@ em vários modelos. Os macros são definidos em arquivos .sql, geralmente no dir
 
 É possível criar quantas macros forem necessárias em um único arquivo .sql
 Você chama as macros pelo nome, não pelo arquivo em si. É como funções em linguagens de programação.
+
+Documentação:
+https://docs.getdbt.com/docs/build/jinja-macros
+https://docs.getdbt.com/guides/using-jinja?step=1
 */
 
 
